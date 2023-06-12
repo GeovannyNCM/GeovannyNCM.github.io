@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tema Recomendado</title>
+  <style>
+    /* Estilos CSS para el reproductor de música con diseño de Neomorfismo */
+    /* Puedes personalizar estos estilos según tus necesidades */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+                  -10px -10px 20px rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+    }
+
+    .cover-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+                  -5px -5px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      border: none;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+                  -5px -5px 10px rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .controls button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <img class="cover-image" src="TDO 1.JPG" alt="Portada del Álbum">
+    <div class="controls">
+      <button id="play-button">&#9658;</button>
+      <button id="pause-button">&#10074;&#10074;</button>
+      <button id="stop-button">&#9632;</button>
+    </div>
+  </div>
+
+  <script>
+    // Script para controlar el reproductor de música
+    const audio = new Audio('TDO1.mp3');
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+    const stopButton = document.getElementById('stop-button');
+
+    playButton.addEventListener('click', () => {
+      audio.play();
+    });
+
+    pauseButton.addEventListener('click', () => {
+      audio.pause();
+    });
+
+    stopButton.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  </script>
+</body
